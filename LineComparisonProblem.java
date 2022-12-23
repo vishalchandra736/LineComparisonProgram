@@ -24,9 +24,12 @@ public class LineComparisonProblem {
         int Length_of_line1 = lineCoordinate();
         System.out.println("For Line 2 - ");
         int Length_of_line2 = lineCoordinate();
-        if (Length_of_line1 == Length_of_line2)
-            System.out.println("Both Lines are Equal");
+        int lengthDifference = Length_of_line1 - Length_of_line2;
+        if (lengthDifference > 0)
+            System.out.println("Length of Line1 is Greater and Length of Line2 is Smaller.");
+        else if (lengthDifference < 0)
+            System.out.println("Length of Line1 is Smaller and Length of Line2 is Greater.");
         else
-            System.out.println("Lines are not Equal");
+            System.out.println("Length of Both Lines are equal.");
     }
 }
