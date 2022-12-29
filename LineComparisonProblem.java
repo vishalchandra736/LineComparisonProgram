@@ -3,8 +3,7 @@ package com.blz.linecomparisonproblem;
 import java.util.Scanner;
 
 public class LineComparisonProblem {
-    public static int lineCoordinate() {
-
+    public int lineCoordinate() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter the First point - X co-ordinate : ");
         int x1 = scan.nextInt();
@@ -19,17 +18,24 @@ public class LineComparisonProblem {
     }
 
     public static void main(String[] args) {
+        LineComparisonProblem Line = new LineComparisonProblem();
         System.out.println("Every Line consisting 2 points and each point consisting 2 co-ordinates (x,y).");
         System.out.println("For Line 1 - ");
-        int Length_of_line1 = lineCoordinate();
+        Integer Length_of_line1 = Line.lineCoordinate();
         System.out.println("For Line 2 - ");
-        int Length_of_line2 = lineCoordinate();
-        int lengthDifference = Length_of_line1 - Length_of_line2;
-        if (lengthDifference > 0)
-            System.out.println("Length of Line1 is Greater and Length of Line2 is Smaller.");
-        else if (lengthDifference < 0)
-            System.out.println("Length of Line1 is Smaller and Length of Line2 is Greater.");
-        else
+        Integer Length_of_line2 = Line.lineCoordinate();
+        System.out.println();
+        // Use equals Method
+        if(Length_of_line1.equals(Length_of_line2)) {
             System.out.println("Length of Both Lines are equal.");
+        }
+        else {
+            // Use compareTo Method
+            int lengthDifference = Length_of_line1.compareTo(Length_of_line2);
+            if (lengthDifference > 0)
+                System.out.println("Length of Line1 is Greater and Length of Line2 is Smaller.");
+            else if (lengthDifference < 0)
+                System.out.println("Length of Line1 is Smaller and Length of Line2 is Greater.");
+        }
     }
 }
